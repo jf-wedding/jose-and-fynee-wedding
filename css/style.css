@@ -397,6 +397,40 @@
             color: var(--secondary);
         }
 
+       
+/* Make story images a consistent, responsive size */
+.story-image.reveal {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 320px;
+    margin: 0.75rem 1rem;
+    vertical-align: top;
+}
+
+.story-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Small screens */
+@media (max-width: 900px) {
+    .story-image.reveal {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 600px) {
+    .story-image.reveal {
+        max-width: 160px;
+        margin: 0.5rem;
+    }
+
+}
+
         /* Timeline Section */
         .timeline {
             background: var(--white);
@@ -893,32 +927,6 @@
                 right: 10px;
             }
 
-/* Make story images a consistent, responsive size */
-.story-image reveal {
-  position: relative;   /* keeps overlay positioned correctly */
-  display: inline-block;
-  width: 100%;
-  max-width: 320px;     /* desktop / large-tablet maximum */
-  margin: 0.75rem 1rem;
-  vertical-align: top;
-}
-
-.story-image img {
-  display: block;
-  width: 100%;          /* fluid width so it scales to container */
-  height: auto;         /* preserve aspect ratio */
-  object-fit: cover;    /* crop to fill if you set a fixed height */
-  border-radius: 6px;
-}
-
-/* Small screens — make images smaller on phones */
-@media (max-width: 900px) {
-  .story-image { max-width: 260px; }
-}
-
-@media (max-width: 600px) {
-  .story-image { max-width: 160px; margin: 0.5rem; }
-}
 }
        </style>
 
