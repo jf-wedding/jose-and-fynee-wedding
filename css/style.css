@@ -894,7 +894,7 @@
             }
 
 /* Make story images a consistent, responsive size */
-.story-image {
+.story-image reveal {
   position: relative;   /* keeps overlay positioned correctly */
   display: inline-block;
   width: 100%;
