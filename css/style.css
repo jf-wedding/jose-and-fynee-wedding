@@ -893,14 +893,18 @@
                 right: 10px;
             }
 
-/* OUR STORY PHOTOS - FORCE SMALL SIZE */
+/* ========================================
+   OUR STORY PHOTO SIZE
+   ======================================== */
+
 .story-image {
     width: 300px !important;
     max-width: 300px !important;
     margin: 2rem auto !important;
-    overflow: hidden;
     border-radius: 12px;
+    overflow: hidden;
     position: relative;
+    cursor: pointer;
 }
 
 .story-image img {
@@ -910,6 +914,7 @@
     display: block;
 }
 
+/* Mobile */
 @media (max-width: 768px) {
     .story-image {
         width: 85% !important;
