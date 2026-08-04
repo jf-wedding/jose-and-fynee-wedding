@@ -893,7 +893,7 @@
                 right: 10px;
             }
 
- .story-image {
+.story-image {
     width: 45%;
     margin: 2rem auto;
     border-radius: 12px;
@@ -903,8 +903,14 @@
 
 .story-image img {
     width: 100%;
+    height: auto;
     display: block;
 }
+
+@media (max-width: 768px) {
+    .story-image {
+        width: 85%;
+    }
 
        </style>
 
