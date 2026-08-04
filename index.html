@@ -345,6 +345,19 @@
              style="width: 100%; height: auto; display: block; cursor: pointer;" 
              alt="Dress Code Friends and Family">
     </div>
+
+<dialog id="image-modal" onclick="this.close()" style="border: none; background: transparent; padding: 0; max-width: 90vw; max-height: 90vh;">
+    <img id="modal-img" src="" style="width: 100%; height: auto; max-height: 90vh; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 25px rgba(0,0,0,0.5);">
+</dialog>
+
+<script>
+    function openLightbox(src) {
+        const modal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        modalImg.src = src;
+        modal.showModal();
+    }
+</script>
             
             <p><strong>Friday Rehearsal:</strong>Casual Attire</p>
             <p><strong>Saturday Ceremony & Reception:</strong>Formal/Semi Formal Attire</p>
