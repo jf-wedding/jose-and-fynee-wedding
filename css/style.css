@@ -893,38 +893,32 @@
                 right: 10px;
             }
 
-/* ========================================
-   OUR STORY PHOTO SIZE
-   ======================================== */
-
+/* Make story images a consistent, responsive size */
 .story-image {
-    width: 300px !important;
-    max-width: 300px !important;
-    margin: 2rem auto !important;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
+  position: relative;   /* keeps overlay positioned correctly */
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;     /* desktop / large-tablet maximum */
+  margin: 0.75rem 1rem;
+  vertical-align: top;
 }
 
 .story-image img {
-    width: 100% !important;
-    max-width: 300px !important;
-    height: auto !important;
-    display: block;
+  display: block;
+  width: 100%;          /* fluid width so it scales to container */
+  height: auto;         /* preserve aspect ratio */
+  object-fit: cover;    /* crop to fill if you set a fixed height */
+  border-radius: 6px;
 }
 
-/* Mobile */
-@media (max-width: 768px) {
-    .story-image {
-        width: 85% !important;
-        max-width: 350px !important;
-    }
+/* Small screens — make images smaller on phones */
+@media (max-width: 900px) {
+  .story-image { max-width: 260px; }
+}
 
-    .story-image img {
-        width: 100% !important;
-        max-width: 350px !important;
-    }
+@media (max-width: 600px) {
+  .story-image { max-width: 160px; margin: 0.5rem; }
+}
 }
        </style>
 
