@@ -72,7 +72,7 @@
 
 /* Base reset */
 *{box-sizing:border-box}
-body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(#f6efe9);background:#1a1a1a}
+body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(--ivory);background:#000}
 
         /* Hero Section */
 .hero{
@@ -970,5 +970,4 @@ body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(#f6efe9
 
 }
        </style>
-
 
