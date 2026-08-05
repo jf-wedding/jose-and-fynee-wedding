@@ -61,138 +61,179 @@
             color: var(--primary);
         }
 
+:root{
+  --maroon: #7a2626;    /* panel color */
+  --maroon-dark: #5b1a1a;
+  --accent-gold: #d4a941;
+  --ivory: #f6efe9;
+  --max-width: 680px;
+  --container-padding: 48px;
+}
+
+/* Base reset */
+*{box-sizing:border-box}
+body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(--ivory);background:#000}
+
         /* Hero Section */
-        #hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            overflow: hidden;
-            background: var(--white);
-            padding-top: 60px;
-        }
+.hero{
+  display:flex;
+  min-height:100vh;
+  align-items:stretch;
+}
 
-        .hero-left {
-            flex: 1;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
+/* Left photo */
+.hero-left{
+  flex:1 1 50%;
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  min-height:600px;
+}
 
-        .hero-left::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(90deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 100%);
-        }
+/* Right panel */
+.hero-right{
+  flex:1 1 50%;
+  background:linear-gradient(180deg, var(--maroon) 0%, var(--maroon-dark) 100%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: clamp(28px, 4vw, 80px);
+}
 
-        .hero-right {
-            flex: 1;
-            height: 100%;
-            background: linear-gradient(135deg, #7d1d1d 0%, #a63737 100%);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 3rem;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-            overflow: hidden;
-        }
+/* Content container */
+.hero-content{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+  padding: 0 clamp(18px, 2.5vw, 60px);
+}
 
-        .hero-right::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
+/* Quote */
+.hero-quote{
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  margin:0 0 18px;
+  /* Scale the quote: small phones -> large desktops */
+  font-size: clamp(1.4rem, 1rem + 3.6vw, 3.6rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ivory);
+}
 
-        .hero-right::after {
-            content: '';
-            position: absolute;
-            bottom: -50%;
-            left: -5%;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
+/* Bible reference (smaller, inline) */
+.hero-quote .bible{
+  display:block;
+  font-family: 'Poppins', sans-serif;
+  font-weight:600;
+  font-size: clamp(0.8rem, 0.5rem + 1.2vw, 1rem);
+  opacity:0.95;
+  margin-top:0.6rem;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            animation: fadeInUp 1s ease 0.3s both;
-        }
+/* J ♥ F icon */
+.hero-icon{
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  font-size: clamp(1.6rem, 1rem + 3vw, 2.8rem);
+  margin: 18px 0;
+  color: var(--ivory);
+}
 
-        .hero-icon {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
+/* Small heart styling */
+.hero-icon .heart{ color: var(--accent-gold); margin:0 0.35rem; }
 
-        .hero-content h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 1rem 0;
-            letter-spacing: 1px;
-        }
+/* Faded big names behind or above */
+.hero-names{
+  margin:12px 0 24px;
+  font-family: 'Playfair Display', serif;
+  font-weight:700;
+  font-size: clamp(1.6rem, 1rem + 2vw, 2.6rem);
+  color: rgba(0,0,0,0.06);
+  /* Create subtle embossed effect — low contrast but visible */
+  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  -webkit-background-clip: text;
+  opacity:0.95;
+}
 
-        .hero-content p {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.1rem;
-            margin: 1.5rem 0;
-            letter-spacing: 1px;
-        }
+/* Date / Location */
+.hero-date, .hero-location{
+  margin:0;
+  font-size: clamp(0.9rem, 0.9rem + 0.2vw, 1rem);
+  color: rgba(246,239,233,0.95);
+  font-weight:500;
+  margin-bottom:6px;
+}
 
-        .countdown {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin: 2rem 0;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-        }
+/* Countdown */
+.countdown{
+  display:flex;
+  gap:18px;
+  justify-content:center;
+  margin: 20px 0;
+  align-items:baseline;
+}
+.countdown-item{ text-align:center; min-width:66px; }
+.countdown-number{
+  font-family: 'Poppins', sans-serif;
+  font-weight:700;
+  color: var(--accent-gold);
+  font-size: clamp(1.2rem, 0.8rem + 2.8vw, 2.2rem);
+  line-height:1;
+}
+.countdown-label{
+  font-size: 0.66rem;
+  opacity:0.95;
+  margin-top:6px;
+  color: var(--ivory);
+}
 
-        .countdown-item {
-            text-align: center;
-        }
+/* Description paragraph */
+.hero-desc{
+  margin-top:18px;
+  font-size: clamp(0.85rem, 0.8rem + 0.2vw, 1rem);
+  color: rgba(246,239,233,0.94);
+  line-height:1.6;
+  max-width:520px;
+  margin-left:auto;
+  margin-right:auto;
+}
 
-        .countdown-number {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary);
-        }
+/* RSVP button */
+.rsvp-button{
+  display:inline-block;
+  margin-top:18px;
+  padding: 10px 26px;
+  border-radius:28px;
+  border:2px solid rgba(212,169,65,0.16);
+  color: var(--accent-gold);
+  background: transparent;
+  text-decoration:none;
+  font-weight:600;
+  transition: all 180ms ease;
+  box-shadow: 0 0 0 4px rgba(0,0,0,0.06) inset;
+}
+.rsvp-button:hover{
+  background: rgba(212,169,65,0.08);
+  transform:translateY(-2px);
+}
 
-        .rsvp-button {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 0.8rem 2rem;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            text-decoration: none;
-            font-family: 'Poppins', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            border-radius: 25px;
-        }
+/* Responsive: stack on narrow screens */
+@media (max-width: 900px){
+  .hero{flex-direction:column;}
+  .hero-left{width:100%; min-height:44vh;}
+  .hero-right{width:100%; padding: clamp(18px, 4vw, 36px);}
+  .hero-content{padding:0}
+  .hero-quote{font-size: clamp(1.4rem, 1rem + 3vw, 2.4rem);}
+  .hero-names{display:block;color:rgba(255,255,255,0.9); background:transparent;-webkit-text-fill-color:initial}
+}
 
-        .rsvp-button:hover {
-            background: var(--primary);
-            color: var(--maroon);
-        }
+/* Tight mobile adjustments */
+@media (max-width: 420px){
+  .hero-quote{font-size: clamp(1.15rem, 1rem + 2.2vw, 1.9rem);}
+  .countdown{gap:10px}
+  .countdown-item{min-width:52px}
+}
 
         /* Reveal Animation */
         .reveal {
