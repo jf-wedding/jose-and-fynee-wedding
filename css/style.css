@@ -1051,5 +1051,53 @@
   .hero-right {
     width: 100%;
   }
+
+/* Make all hero text readable against the maroon background */
+#hero .hero-right {
+  color: #f6efe9;
+}
+
+#hero .hero-right h1 {
+  color: #ffffff;
+}
+
+#hero .hero-right h1 span {
+  display: block;
+  margin-top: 10px;
+  color: #f6efe9;
+  font-size: 1rem;
+}
+
+#hero .hero-right h2 {
+  color: #ffffff;
+}
+
+#hero .hero-right p {
+  color: #f6efe9 !important;
+}
+
+#hero .hero-icon {
+  color: #ffffff;
+}
+
+/* Keep the countdown gold */
+#hero .countdown-number {
+  color: #d4a941;
+}
+
+#hero .countdown-item div:not(.countdown-number) {
+  color: #f6efe9;
+}
+
+/* Make RSVP button easier to see */
+#hero .rsvp-button {
+  color: #f4c84a;
+  border-color: #d4a941;
+}
+
+#hero .rsvp-button:hover {
+  color: #7a2626;
+  background: #d4a941;
+       }
 }
        </style>
