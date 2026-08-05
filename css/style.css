@@ -564,7 +564,7 @@ body{margin:0;font-family:'Poppins',system-ui,Arial,sans-serif;color:var(--ivory
             font-family: 'Poppins', sans-serif;
             font-weight: 600;
             color: var(--secondary);
-            font-size: 0.95rem;
+            font-size: 1.5rem;
         }
 
         .timeline-content h4 {
