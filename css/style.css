@@ -1059,6 +1059,9 @@
 
 #hero .hero-right h1 {
   color: #ffffff;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 #hero .hero-right h1 span {
