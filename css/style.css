@@ -1099,5 +1099,44 @@
   color: #7a2626;
   background: #d4a941;
        }
+
+.accommodation-links {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.accommodation-links p {
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.accommodation-button {
+  display: inline-block;
+  margin: 6px;
+  padding: 11px 20px;
+  border: 2px solid #7a2626;
+  border-radius: 25px;
+  background: #7a2626;
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.accommodation-button:hover {
+  background: #d4a941;
+  border-color: #d4a941;
+  color: #5b1a1a;
+  transform: translateY(-2px);
+}
+
+/* Make the buttons easy to tap on phones */
+@media (max-width: 600px) {
+  .accommodation-button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+  }
 }
        </style>
