@@ -1158,5 +1158,45 @@
     width: 100%;
     margin: 10px 0;
   }
+/* =====================================
+   DRESS CODE IMAGES
+   ===================================== */
+
+.dress-code-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 2rem;
 }
-       </style>
+
+.dress-code-images .story-image {
+    position: relative;
+    display: block;
+    width: 100% !important;
+    max-width: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.dress-code-images .story-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@media (max-width: 768px) {
+    .dress-code-images {
+        gap: 1.5rem;
+    }
+
+    .dress-code-images .story-image {
+        width: 100% !important;
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+</style>
