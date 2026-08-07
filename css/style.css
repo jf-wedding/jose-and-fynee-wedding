@@ -1202,5 +1202,16 @@
        .weather-card:empty {
            display: none;
        }
+@media (max-width: 600px) {
+    .dress-code-image {
+        width: 90% !important;
+        max-width: 90% !important;
+        margin: 0 auto 20px auto !important;
+    }
+
+    .dress-code-image img {
+        width: 100% !important;
+        height: auto !important;
+    }
 }
 </style>
