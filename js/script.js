@@ -1,18 +1,17 @@
-function toggleAnswer(question) {
-  const answer = question.nextElementSibling;
-  const icon = question.querySelector(".qa-toggle");
+document.addEventListener("DOMContentLoaded", function () {
 
-  answer.classList.toggle("active");
-  icon.textContent = answer.classList.contains("active") ? "▲" : "▼";
-}
-function toggleGiftOptions(button) {
+    const button = document.getElementById("giftToggleButton");
+    const options = document.getElementById("giftOptions");
 
-    const giftOptions =
-        button.nextElementSibling;
+    if (button && options) {
 
-    giftOptions.classList.toggle("open");
+        button.addEventListener("click", function () {
 
-    button.classList.toggle("active");
+            options.classList.toggle("open");
+            button.classList.toggle("open");
 
-}
-})();
+        });
+
+    }
+
+});
