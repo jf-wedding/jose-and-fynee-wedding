@@ -5,43 +5,79 @@ function toggleAnswer(question) {
   answer.classList.toggle("active");
   icon.textContent = answer.classList.contains("active") ? "▲" : "▼";
 }
-// Wedding countdown — Philippines time
+
+
+// ============================================
+// WEDDING COUNTDOWN
+// September 19, 2026 — 3:00 PM Philippines
+// ============================================
+
 (function () {
-  // September 19, 2026 at 3:00 PM Philippine Time
-  const target = new Date("2026-09-19T15:00:00+08:00");
+
+  // Prevent this countdown from starting more than once
+  if (window.weddingCountdownStarted) {
+    return;
+  }
+
+  window.weddingCountdownStarted = true;
+
+  const targetDate = new Date("2026-09-19T15:00:00+08:00");
+
+  const daysElement = document.getElementById("days");
+  const hoursElement = document.getElementById("hours");
+  const minutesElement = document.getElementById("minutes");
+  const secondsElement = document.getElementById("seconds");
 
   function updateCountdown() {
-    const now = new Date();
-    let diff = target.getTime() - now.getTime();
 
-    if (diff <= 0) {
-      diff = 0;
+    const now = Date.now();
+    const target = targetDate.getTime();
+
+    let distance = target - now;
+
+    // Wedding has arrived
+    if (distance <= 0) {
+      daysElement.textContent = "00";
+      hoursElement.textContent = "00";
+      minutesElement.textContent = "00";
+      secondsElement.textContent = "00";
+      return;
     }
 
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    diff -= days * (1000 * 60 * 60 * 24);
+    const day = 1000 * 60 * 60 * 24;
+    const hour = 1000 * 60 * 60;
+    const minute = 1000 * 60;
 
-    const hours = Math.floor(diff / (1000 * 60 * 60));
-    diff -= hours * (1000 * 60 * 60);
+    const days = Math.floor(distance / day);
 
-    const minutes = Math.floor(diff / (1000 * 60));
-    diff -= minutes * (1000 * 60);
+    distance %= day;
 
-    const seconds = Math.floor(diff / 1000);
+    const hours = Math.floor(distance / hour);
 
-    document.getElementById("days").textContent =
+    distance %= hour;
+
+    const minutes = Math.floor(distance / minute);
+
+    distance %= minute;
+
+    const seconds = Math.floor(distance / 1000);
+
+    daysElement.textContent =
       String(days).padStart(2, "0");
 
-    document.getElementById("hours").textContent =
+    hoursElement.textContent =
       String(hours).padStart(2, "0");
 
-    document.getElementById("minutes").textContent =
+    minutesElement.textContent =
       String(minutes).padStart(2, "0");
 
-    document.getElementById("seconds").textContent =
+    secondsElement.textContent =
       String(seconds).padStart(2, "0");
   }
 
   updateCountdown();
-  setInterval(updateCountdown, 1000);
+
+  window.weddingCountdownInterval =
+    setInterval(updateCountdown, 1000);
+
 })();
