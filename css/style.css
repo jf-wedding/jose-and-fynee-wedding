@@ -1213,5 +1213,47 @@
         width: 100% !important;
         height: auto !important;
     }
+/* =====================================
+   HERO TEXT COLOR FIX
+   ===================================== */
+
+#hero .hero-right {
+    color: #f6efe9 !important;
+}
+
+#hero .hero-right h1 {
+    color: #ffffff !important;
+}
+
+#hero .hero-right h1 span {
+    color: #ffffff !important;
+}
+
+#hero .hero-right h2 {
+    color: #ffffff !important;
+}
+
+#hero .hero-right p {
+    color: #f6efe9 !important;
+}
+
+#hero .hero-icon {
+    color: #ffffff !important;
+}
+
+/* Countdown numbers */
+#hero .countdown-number {
+    color: #d4a941 !important;
+}
+
+/* Days, Hours, Mins, Secs */
+#hero .countdown-item div:not(.countdown-number) {
+    color: #f6efe9 !important;
+}
+
+/* RSVP button */
+#hero .rsvp-button {
+    color: #f4c84a !important;
+       }  
 }
 </style>
