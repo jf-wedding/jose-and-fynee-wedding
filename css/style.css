@@ -1200,9 +1200,11 @@
         margin-left: auto;
         margin-right: auto;
     }
+       
        .weather-card:empty {
            display: none;
        }
+}
 @media (max-width: 600px) {
     .dress-code-image {
         width: 90% !important;
@@ -1214,6 +1216,7 @@
         width: 100% !important;
         height: auto !important;
     }
+}
 /* =====================================
    HERO TEXT COLOR FIX
    ===================================== */
