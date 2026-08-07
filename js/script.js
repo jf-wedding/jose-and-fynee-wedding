@@ -7,8 +7,8 @@ function toggleAnswer(question) {
 }
 // Wedding countdown — Philippines time
 (function () {
-  // September 19, 2026 at 9:00 AM Philippine Time
-  const target = new Date("2026-09-19T09:00:00+08:00");
+  // September 19, 2026 at 3:00 PM Philippine Time
+  const target = new Date("2026-09-19T15:00:00+08:00");
 
   function updateCountdown() {
     const now = new Date();
