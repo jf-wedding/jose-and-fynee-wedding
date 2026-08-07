@@ -1256,5 +1256,260 @@
 #hero .rsvp-button {
     color: #f4c84a !important;
        }  
+
+       /* =========================
+   GIFT GUIDE SECTION
+========================= */
+
+.gift-guide {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.gift-guide-content {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.gift-guide h2 {
+    margin-bottom: 2rem;
+}
+
+.gift-guide-content > p {
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.gift-heart {
+    font-size: 2rem;
+    color: #7B1128;
+    margin: 1.5rem 0;
+}
+
+.gift-note {
+    font-style: italic;
+}
+
+
+/* =========================
+   VIEW GIFT OPTIONS BUTTON
+========================= */
+
+.gift-toggle {
+    margin-top: 2rem;
+    padding: 14px 26px;
+
+    border: 1px solid #7B1128;
+    border-radius: 30px;
+
+    background: #7B1128;
+    color: white;
+
+    font-size: 1rem;
+    font-family: inherit;
+
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.gift-toggle:hover {
+    background: transparent;
+    color: #7B1128;
+    transform: translateY(-2px);
+}
+
+.gift-arrow {
+    display: inline-block;
+
+    margin-left: 8px;
+
+    transition: transform 0.4s ease;
+}
+
+
+/* Arrow rotates when opened */
+
+.gift-toggle.active .gift-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================
+   HIDDEN GIFT OPTIONS
+========================= */
+
+.gift-options-wrapper {
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    opacity: 0;
+
+    transition:
+        max-height 0.7s ease,
+        opacity 0.5s ease,
+        margin 0.5s ease;
+
+    margin-top: 0;
+}
+
+
+/* When opened */
+
+.gift-options-wrapper.open {
+
+    max-height: 1000px;
+
+    opacity: 1;
+
+    margin-top: 3rem;
+}
+
+
+/* =========================
+   QR CODE CARDS
+========================= */
+
+.gift-options {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 3rem;
+
+    flex-wrap: wrap;
+}
+
+
+.gift-option {
+
+    width: 240px;
+
+    padding: 2rem 1.5rem;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.7);
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.08);
+}
+
+
+.gift-option h3 {
+
+    color: #7B1128;
+
+    font-size: 1.4rem;
+
+    margin-bottom: 0.8rem;
+}
+
+
+.gift-name {
+
+    font-weight: 600;
+}
+
+
+.gift-option p {
+
+    margin: 0.4rem 0;
+}
+
+
+/* QR IMAGE */
+
+.gift-qr {
+
+    display: block;
+
+    width: 180px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    margin: 1.2rem auto;
+
+    border-radius: 8px;
+}
+
+
+.scan-text {
+
+    font-size: 0.9rem;
+
+    opacity: 0.8;
+}
+
+
+/* Thank-you line */
+
+.gift-thank-you {
+
+    margin-top: 3rem;
+
+    font-weight: 500;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .gift-guide {
+
+        padding: 3.5rem 1.5rem;
+
+    }
+
+
+    .gift-options {
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 2rem;
+
+    }
+
+
+    .gift-option {
+
+        width: 100%;
+
+        max-width: 300px;
+
+    }
+
+
+    .gift-qr {
+
+        width: 170px;
+
+        height: 170px;
+
+    }
+
+
+    .gift-toggle {
+
+        width: 100%;
+
+        max-width: 280px;
+
+    }
 }
 </style>
