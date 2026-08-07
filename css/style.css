@@ -1199,5 +1199,8 @@
         margin-left: auto;
         margin-right: auto;
     }
+       .weather-card:empty {
+           display: none;
+       }
 }
 </style>
