@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     /* =========================
        BACKGROUND MUSIC
     ========================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
     const music = document.getElementById("backgroundMusic");
     const musicButton = document.getElementById("musicButton");
 
