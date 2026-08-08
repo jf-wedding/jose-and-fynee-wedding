@@ -1341,9 +1341,9 @@
 
 
 .gift-option {
-    width: 240px;
+    width: 320px;
 
-    padding: 1.5rem;
+    padding: 2rem;
 
     background: white;
 
@@ -1361,12 +1361,13 @@
 .gift-qr {
     display: block;
 
-    width: 180px !important;
-    height: 180px !important;
+    width: 280px !important;
+    max-width: 100%;
+    height: auto !important;
 
     object-fit: contain;
 
-    margin: 1rem auto;
+    margin: 1.5rem auto;
 }
 
 
@@ -1385,13 +1386,15 @@
     }
 
     .gift-option {
-        width: 100%;
-        max-width: 280px;
+        width: 90%;
+        max-width: 340px;
+        padding: 1.5rem;
     }
 
     .gift-qr {
-        width: 160px !important;
-        height: 160px !important;
+        width: 280px !important;
+        max-width: 100%;
+        height: auto !important;
     }
 }
 </style>
