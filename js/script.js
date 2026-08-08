@@ -22,32 +22,38 @@ document.addEventListener("DOMContentLoaded", function () {
     const music = document.getElementById("backgroundMusic");
     const musicButton = document.getElementById("musicButton");
 
-    if (music && musicButton) {
-
-        music.volume = 0.60;
-
-        musicButton.addEventListener("click", function () {
-
-            if (music.paused) {
-
-                music.play()
-                    .then(function () {
-                        musicButton.innerHTML = "🔊 Music On";
-                    })
-                    .catch(function (error) {
-                        console.error("Music could not play:", error);
-                        musicButton.innerHTML = "⚠️ Music Error";
-                    });
-
-            } else {
-
-                music.pause();
-                musicButton.innerHTML = "🎵 Play Music";
-
-            }
-
-        });
-
+    if (!music || !musicButton) {
+        console.error("Music player not found.");
+        return;
     }
+
+    music.volume = 0.6;
+
+    music.addEventListener("loadedmetadata", function () {
+        console.log("Music loaded successfully.");
+        console.log("Duration:", music.duration);
+    });
+
+    music.addEventListener("error", function () {
+        console.error("Audio loading error:", music.error);
+        musicButton.textContent = "⚠️ Music Failed to Load";
+    });
+
+    musicButton.addEventListener("click", async function () {
+
+        if (music.paused) {
+            try {
+                await music.play();
+                musicButton.textContent = "🔊 Music On";
+            } catch (error) {
+                console.error("Playback error:", error);
+                musicButton.textContent = "⚠️ Music Error";
+            }
+        } else {
+            music.pause();
+            musicButton.textContent = "🎵 Play Music";
+        }
+
+    });
 
 });
