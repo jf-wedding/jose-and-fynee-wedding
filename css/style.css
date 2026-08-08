@@ -1418,10 +1418,10 @@
     cursor: pointer;
 
     box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+       transition: transform 0.2s ease;
 }
 
 .music-button:hover {
     transform: scale(1.05);
        }
-}
 </style>
