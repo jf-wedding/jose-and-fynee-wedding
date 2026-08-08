@@ -1396,5 +1396,32 @@
         max-width: 100%;
         height: auto !important;
     }
+       /* =========================
+   BACKGROUND MUSIC BUTTON
+========================= */
+
+.music-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+
+    background: #7B1128;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    padding: 12px 18px;
+
+    font-size: 0.9rem;
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.20);
+}
+
+.music-button:hover {
+    transform: scale(1.05);
+       }
 }
 </style>
