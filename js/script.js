@@ -29,11 +29,25 @@ document.addEventListener("DOMContentLoaded", function () {
         musicButton.addEventListener("click", function () {
 
             if (music.paused) {
-                music.play();
-                musicButton.innerHTML = "🔊 Music On";
+
+                music.play()
+                    .then(function () {
+                        musicButton.innerHTML = "🔊 Music On";
+                    })
+                    .catch(function (error) {
+                        console.error("Music could not play:", error);
+                        musicButton.innerHTML = "⚠️ Music Error";
+                    });
+
             } else {
+
                 music.pause();
-                musicButton.innerHTML = "🔇 Music Off";
+                musicButton.innerHTML = "🎵 Play Music";
+
             }
 
         });
+
+    }
+
+});
