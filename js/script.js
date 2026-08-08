@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (music && musicButton) {
 
-        music.volume = 0.35;
+        music.volume = 0.60;
 
         musicButton.addEventListener("click", function () {
 
@@ -37,6 +37,3 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         });
-    }
-
-});
