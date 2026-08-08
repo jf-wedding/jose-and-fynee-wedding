@@ -14,4 +14,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     }
 
+    });
+
+/* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const music = document.getElementById("backgroundMusic");
+const musicButton = document.getElementById("musicButton");
+
+music.volume = 0.35;
+
+musicButton.addEventListener("click", function () {
+
+    if (music.paused) {
+        music.play();
+        musicButton.innerHTML = "🔊 Music On";
+    } else {
+        music.pause();
+        musicButton.innerHTML = "🔇 Music Off";
+    }
+
 });
