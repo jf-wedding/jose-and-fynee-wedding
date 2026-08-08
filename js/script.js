@@ -19,29 +19,31 @@ document.addEventListener("DOMContentLoaded", function () {
        BACKGROUND MUSIC
     ========================= */
 
+document.addEventListener("DOMContentLoaded", function () {
+
     const music = document.getElementById("backgroundMusic");
     const musicButton = document.getElementById("musicButton");
 
     if (!music || !musicButton) {
-        console.error("Music player not found.");
+        console.error("Music player elements were not found.");
         return;
     }
 
     music.volume = 0.6;
 
-    music.addEventListener("loadedmetadata", function () {
-        console.log("Music loaded successfully.");
-        console.log("Duration:", music.duration);
+    music.addEventListener("canplaythrough", function () {
+        console.log("Music is ready to play.");
     });
 
     music.addEventListener("error", function () {
-        console.error("Audio loading error:", music.error);
-        musicButton.textContent = "⚠️ Music Failed to Load";
+        console.error("Audio failed to load:", music.error);
+        musicButton.textContent = "⚠️ Music Failed";
     });
 
     musicButton.addEventListener("click", async function () {
 
         if (music.paused) {
+
             try {
                 await music.play();
                 musicButton.textContent = "🔊 Music On";
@@ -49,9 +51,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.error("Playback error:", error);
                 musicButton.textContent = "⚠️ Music Error";
             }
+
         } else {
+
             music.pause();
             musicButton.textContent = "🎵 Play Music";
+
         }
 
     });
