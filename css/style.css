@@ -1427,4 +1427,52 @@
     transform: scale(1.05);
 }
 
+/* =========================
+   OUR STORY TEXT BOXES
+========================= */
+
+.story-text-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 1.5rem auto 3rem auto;
+
+    padding: 2rem 2.5rem;
+
+    background: linear-gradient(
+        135deg,
+        rgba(125, 29, 29, 0.07) 0%,
+        rgba(212, 175, 55, 0.10) 100%
+    );
+
+    border-radius: 10px;
+
+    /* Gold line on the left */
+    border-left: 4px solid var(--primary);
+
+    box-sizing: border-box;
+}
+
+/* Paragraph spacing inside box */
+.story-text-box p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* Remove extra space after last paragraph */
+.story-text-box p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* MOBILE */
+@media (max-width: 600px) {
+
+    .story-text-box {
+        padding: 1.4rem 1.2rem;
+        margin: 1rem auto 2rem auto;
+    }
+
+}
+
 </style>
